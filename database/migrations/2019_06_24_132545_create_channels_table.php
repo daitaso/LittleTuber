@@ -17,7 +17,6 @@ class CreateChannelsTable extends Migration
             $table->bigIncrements('id');
             $table->string('channel_id');
             $table->string('title');
-            $table->string('description');
             $table->string('thumbnail');
             $table->integer('subscribers');
             $table->string('has_games');

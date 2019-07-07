@@ -16,40 +16,53 @@
         <!--CSS読み込み-->
         <?//= Asset::css('style.css') ?>
 
-        <!-- UIkit CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <link href="{{ asset('css/sticky-footer.css') }}" rel="stylesheet">
 
         <!--fontawesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
         <!--日本語フォント-->
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700&amp;subset=japanese" rel="stylesheet">
 
     </head>
 <body>
 
-{{--ヘッダー--}}
-<header class="uk-section uk-section-primary uk-section-xsmall">
-    <div class="uk-container uk-container-small">
-        <div uk-grid>
-            <div class="uk-width-1-2 ">ロゴ</div>
-            <div class="uk-width-1-2 uk-text-right">メニュー</div>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url("/")}}">LittleTuberRanking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- メニューを右寄せ -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">SignUp <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Login</a>
+                </li>
+            </ul>
+            <!-- フォームを削除 -->
         </div>
-    </div>
+    </nav>
 </header>
-{{--コンテンツ--}}
-<div class="uk-container uk-container-small">
-    @yield('content')
-</div>
-{{--フッター--}}
-<footer class="uk-section uk-section-primary uk-section-xsmall">
-    <div class="uk-container uk-container-small">
-        Copyright LittleTubers  All Rights Reserved.
+
+@yield('content')
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted text-center">Copyright LittleTuber 2019 .All Rights Reserved.</p>
     </div>
 </footer>
 
-<!-- UIkit JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+{{--script--}}
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

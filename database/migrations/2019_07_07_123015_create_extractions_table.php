@@ -4,19 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProgresssTable extends Migration
+class CreateExtractionsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('progresss', function (Blueprint $table) {
+    public function up(){
+
+        Schema::create('extractions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('channel_id');
-            $table->integer('subscribers');
+            $table->string('keywords');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
         });
@@ -29,6 +29,6 @@ class CreateProgresssTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('progresss');
+        Schema::dropIfExists('extractions');
     }
 }
